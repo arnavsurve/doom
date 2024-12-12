@@ -40,13 +40,13 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Seafile/My\ Library/org/")
+(setq org-directory "~/Seafile/org/")
 (defun update-org-agenda-files ()
   "Update org-agenda-files to include todos from multiple directories."
   (setq org-agenda-files
         (append
-         (directory-files-recursively "~/Seafile/My Library/org/" "\\.org$")
-         (directory-files-recursively "~/Seafile/My Library/School/" "\\.org$"))))
+         (directory-files-recursively "~/Seafile/org/" "\\.org$")
+         (directory-files-recursively "~/Seafile/School/" "\\.org$"))))
 
 (update-org-agenda-files)
 (add-hook 'emacs-startup-hook #'update-org-agenda-files)
